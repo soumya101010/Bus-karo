@@ -1,0 +1,30 @@
+.dashboard-container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+  overflow-x: auto;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.dashboard-table th {
+  background-color: #0d6efd;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-table th, .dashboard-table td {
+    padding: 4px;
+    font-size: 12px;
+  }
+}
