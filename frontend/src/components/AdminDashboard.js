@@ -4,7 +4,6 @@ import { Chart } from 'chart.js/auto';
 
 const socket = io('http://localhost:3000', { transports: ['websocket'] });
 
-
 export default function AdminDashboard() {
   const [buses, setBuses] = useState({});
   const chartRef = useRef(null);
@@ -26,11 +25,11 @@ export default function AdminDashboard() {
     myChartRef.current = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: Object.keys(data),
+        labels: Object.values(data).map(b => b.name),
         datasets: [{
           label: 'Distance Covered (meters)',
           data: Object.values(data).map(b => b.distance),
-          backgroundColor: 'rgba(54, 162, 235, 0.6)'
+          backgroundColor: Object.values(data).map(b => b.color)
         }]
       },
       options: { responsive: true, maintainAspectRatio: false }
@@ -54,7 +53,7 @@ export default function AdminDashboard() {
           <tbody>
             {Object.keys(buses).map(busId => (
               <tr key={busId}>
-                <td>{busId}</td>
+                <td>{buses[busId].name}</td>
                 <td>{buses[busId].lat.toFixed(6)}</td>
                 <td>{buses[busId].lon.toFixed(6)}</td>
                 <td>{buses[busId].speed}</td>
