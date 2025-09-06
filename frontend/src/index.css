@@ -1,13 +1,37 @@
+/* Global body styles with wallpaper */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-image: url('./assets/wallpaper.jpg'); /* path relative to CSS file */
+  background-size: cover;       /* make it cover the screen */
+  background-repeat: no-repeat; /* prevent tiling */
+  background-attachment: fixed; /* keeps wallpaper fixed when scrolling */
+  background-position: center;  /* center the wallpaper */
+  font-family: 'Ridge', sans-serif;
 }
 
+/* Semi-transparent overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* dark transparent overlay */
+  z-index: -1; /* stays behind all content */
+}
+
+/* Code block font */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.site-heading {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 48px;       /* a bit bigger */
+  letter-spacing: 3px;   /* more spacing */
+}
+
+

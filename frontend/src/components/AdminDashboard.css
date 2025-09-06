@@ -1,30 +1,117 @@
+/* Import font (if available on Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Northern+Soul:wght@400;700&display=swap');
+
+/* Overall dashboard container */
 .dashboard-container {
   width: 95%;
   max-width: 1200px;
   margin: 20px auto;
+  padding: 20px;
+
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.1);  /* semi-transparent */
+  backdrop-filter: blur(12px);           /* blur background */
+  -webkit-backdrop-filter: blur(12px);   /* Safari support */
+  
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  min-height: 100vh;
+  font-family: 'Northern Soul', sans-serif;
+}
+
+/* Site heading */
+.site-heading {
+  font-family: 'Northern Soul', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: #0d6efd; /* Bootstrap primary blue */
+  margin: 30px 0;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* depth shadow */
+}
+
+/* Dashboard section header */
+.dashboard-header {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Card design */
+.card {
+  background: rgba(255, 255, 255, 0.2); /* semi-transparent card */
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #100f0f; /* white text for readability */
+}
+
+/* Table container */
+.table-container {
   overflow-x: auto;
 }
 
+/* Table styling */
 .dashboard-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate; /* ✅ prevent row borders from merging */
+  border-spacing: 0;
+  font-size: 14px;
 }
 
 .dashboard-table th,
 .dashboard-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* ✅ semi-transparent borders */
+  padding: 10px;
   text-align: center;
+  color: #131212; /* ✅ ensure readability on blur */
 }
 
 .dashboard-table th {
-  background-color: #0d6efd;
-  color: white;
+  background-color: rgba(13, 110, 253, 0.85); /* ✅ semi-transparent blue header */
+  color: #fff;
+  font-weight: 600;
 }
 
+/* ✅ Glass-style striped rows */
+.dashboard-table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-table tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Chart container */
+.chart-container {
+  height: 400px;
+  background: rgba(255, 255, 255, 0.15); /* ✅ match glass style */
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Responsive fixes */
 @media screen and (max-width: 768px) {
-  .dashboard-table th, .dashboard-table td {
-    padding: 4px;
+  .dashboard-table th,
+  .dashboard-table td {
+    padding: 6px;
     font-size: 12px;
+  }
+
+  .dashboard-header {
+    font-size: 20px;
+  }
+
+  .site-heading {
+    font-size: 28px;
   }
 }

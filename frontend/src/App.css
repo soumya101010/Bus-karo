@@ -1,7 +1,32 @@
+/* Import custom font */
+@font-face {
+  font-family: 'Ridge';
+  src: url('./fonts/Ridge5-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Main App container */
 .App {
   text-align: center;
 }
 
+/* Site heading (City Transport Tracker) */
+.site-heading {
+  font-family: 'Ridge', 'Poppins', sans-serif; /* Ridge first, fallback to Poppins */
+  font-size: 120px;
+  font-weight: normal;
+  text-align: center;
+  color: #ffffff; /* Blue accent */
+  margin: 10px 0;
+  letter-spacing: 1px;
+  text-transform: uppercase; /* optional: gives modern effect */
+
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 1);
+}
+
+
+/* React logo animation (default CRA stuff) */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
