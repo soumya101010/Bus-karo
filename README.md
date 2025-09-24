@@ -24,12 +24,19 @@ NEXT_PUBLIC_API_URL=http://localhost:3000/api or mongo atlas link
 Project Structure
 .
 ├── /pages          # Next.js pages (frontend + API routes)
+
 ├── /components     # React components
+
 ├── /styles         # Tailwind / global CSS
+
 ├── /lib            # Utilities (e.g. db, auth helpers)
+
 ├── /models         # Mongoose schemas
+
 ├── /server         # Express.js backend logic
+
 └── package.json    # Dependencies
+
 ------------------------------------------------------------------------------------------------------------------------------
 for running project:
 1. in backend : npm run dev
