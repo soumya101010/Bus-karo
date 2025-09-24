@@ -15,8 +15,11 @@ Environment variables:
 Create a .env file in the root folder and add your secrets:
 
 MONGO_URI=your_mongodb_connection_string
+
 JWT_SECRET=your_jwt_secret
+
 NEXT_PUBLIC_API_URL=http://localhost:3000/api or mongo atlas link
+
 ------------------------------------------------------------------------------------------------------------------------------
 Project Structure
 .
